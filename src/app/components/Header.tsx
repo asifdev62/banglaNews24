@@ -25,7 +25,7 @@ const HeaderPage = () => {
                     />
 
                     <div>
-                        <h1 className="text-2xl md:text-3xl font-bold text-red-700 whitespace-nowrap">
+                        <h1 className="text-2xl md:text-2xl font-bold text-red-700 whitespace-nowrap">
                             Bangla News 24
                         </h1>
 
@@ -36,15 +36,17 @@ const HeaderPage = () => {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex justify-center md:justify-end gap-2">
-                    <button className="px-3 md:px-4 py-2 rounded-xl font-semibold">
+        
+                 <div className="flex justify-center md:justify-end gap-2 md:translate-x-10 lg:translate-x-30 sm:translate-0">
+                    <button className="px-4 md:px-3 py-2 rounded-sm font-semibold text-gray-700 text-sm">
                         সাইন ইন
                     </button>
 
-                    <button className="bg-red-700 px-3 md:px-4 py-2 rounded-xl text-white font-semibold">
+                    <button className="bg-red-700 px-4 md:px-3 py-2 rounded-sm text-white font-semibold text-sm">
                         সাইন আপ
                     </button>
                 </div>
+
 
             </div>
 

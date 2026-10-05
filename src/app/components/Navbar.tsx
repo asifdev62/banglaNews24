@@ -3,7 +3,7 @@ import React from 'react';
 const Navbar = () => {
     return (
         <nav className='max-w-7xl mx-auto px-4 py-3'>
-            <div className='flex flex-wrap justify-center gap-x-6 gap-y-3 md:gap-8'>
+            <div className='flex flex-wrap justify-center gap-x-6 gap-y-3 md:gap-8 text-gray-700'>
                 <a className='hover:text-red-700' href="">হোম</a>
                 <a className='hover:text-red-700' href="">রাজনীতি</a>
                 <a className='hover:text-red-700' href="">বিশ্ব</a>
