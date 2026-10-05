@@ -1,28 +1,50 @@
-import React from 'react';
 
-const Navbar = () => {
+import Link from "next/link";
+
+interface Items {
+    slug: string;
+    title: string;
+    topicid: string | null;
+    url: string;
+    scrapable: boolean;
+}
+
+const Navbar = async () => {
+    const res = await fetch(
+        "https://news-api-v2.vercel.app/api/categories"
+    );
+
+    const data = await res.json();
+    const items: Items[] = data.data;
+
+    const filteredItems = items.filter((item) => item.scrapable);
+
     return (
-        <nav className='max-w-7xl mx-auto px-4 py-3'>
-            <div className='flex flex-wrap justify-center gap-x-6 gap-y-3 md:gap-8 text-gray-700'>
-                <a className='hover:text-red-700' href="">হোম</a>
-                <a className='hover:text-red-700' href="">রাজনীতি</a>
-                <a className='hover:text-red-700' href="">বিশ্ব</a>
-                <a className='hover:text-red-700' href="">অর্থনীতি</a>
-                <a className='hover:text-red-700' href="">স্বাস্থ্য</a>
-                <a className='hover:text-red-700' href="">খেলা</a>
-                <a className='hover:text-red-700' href="">প্রযুক্তি</a>
-                <a className='hover:text-red-700' href="">দেখুন</a>
+        <nav>
+            <div className="max-w-7xl mx-auto px-4">
+                <div className="flex items-center justify-center gap-4 md:gap-6 py-3 overflow-x-auto whitespace-nowrap">
+
+                    <Link
+                        className="hover:text-red-700 font-medium shrink-0 text-gray-700"
+                        href="/"
+                    >
+                        হোম
+                    </Link>
+
+                    {filteredItems.map((item) => (
+                        <Link
+                            className="hover:text-red-700 font-medium shrink-0 text-gray-700"
+                            key={item.slug}
+                            href={`/${item.slug}`}
+                        >
+                            {item.title}
+                        </Link>
+                    ))}
+
+                </div>
             </div>
         </nav>
     );
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
