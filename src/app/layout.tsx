@@ -4,6 +4,7 @@ import "./globals.css";
 import HeaderPage from "./components/Header";
 import Navbar from "./components/Navbar";
 import MarqueePage from "./components/Marquee";
+import Footer from "./components/Footer";
 
 const notoSerifBengali = Noto_Serif_Bengali({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar></Navbar>
         <MarqueePage></MarqueePage>
         {children}
+        <Footer />
         </body>
     </html>
   );
