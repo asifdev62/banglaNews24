@@ -15,10 +15,10 @@ const NewsCard = ({news}: {news: News}) => {
                 <Image
                     src={news.imageUrl}
                     alt="news"
-                    width={500}
-                    height={500} />
+                    width={400}
+                    height={400} />
             </figure>
-            <div className="card-body">
+            <div className="card-body ">
                 <p className="text-red-600 font-semibold">{news.category}</p>
                 <h2 className="card-title">{news.title}</h2>
                 <p>{news.description}</p>
