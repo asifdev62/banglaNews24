@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+
 
 const HeaderPage = () => {
 
@@ -9,19 +9,19 @@ const HeaderPage = () => {
     return (
         <div className="max-w-7xl mx-auto px-4 py-4">
 
-            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-3">
 
                 {/* Empty space - Desktop */}
                 <div className="hidden md:block"></div>
 
                 {/* Logo + Title */}
-                <div className="flex items-center justify-center gap-3">
+                <div className="flex items-center justify-center gap-2">
                     <Image
                         src="/logo.webp"
                         alt="logo"
-                        width={40}
-                        height={40}
-                        className="w-14 h-14 md:w-16 md:h-16"
+                        width={30}
+                        height={30}
+                        className="w-10 h-10 md:w-12 md:h-12 object-contain shrink-0"
                     />
 
                     <div>
@@ -55,3 +55,6 @@ const HeaderPage = () => {
 };
 
 export default HeaderPage;
+
+
+
