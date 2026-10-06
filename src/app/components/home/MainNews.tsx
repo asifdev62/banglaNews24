@@ -23,9 +23,10 @@ const MainNews = ({ news = []}:MainNewsProps) => {
             <figure>
                 <Image
                     src={firstNews.imageUrl}
-                    alt="news"
+                    alt={firstNews.title}
                     width={500}
                     height={500} 
+                    loading="eager"
                     className="w-full h-60 sm:h-72 md:h-80 object-cover"/>
             </figure>
             <div className="card-body">

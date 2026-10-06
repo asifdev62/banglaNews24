@@ -35,7 +35,7 @@ const Navbar = async () => {
                         <Link
                             className="hover:text-red-700 font-medium shrink-0 text-gray-700"
                             key={item.slug}
-                            href={`/${item.slug}`}
+                            href={`/categoryes/${item.slug}`}
                         >
                             {item.title}
                         </Link>
