@@ -1,10 +1,9 @@
-import MarqueePage from "./components/Marquee";
-
+import HomePage from "./components/home/page";
 
 export default function Home() {
   return (
     <div>
-         <MarqueePage></MarqueePage>
+         <HomePage></HomePage>
     </div>
   );
 }
