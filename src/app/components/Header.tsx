@@ -19,8 +19,8 @@ const HeaderPage = () => {
                     <Image
                         src="/logo.webp"
                         alt="logo"
-                        width={60}
-                        height={60}
+                        width={40}
+                        height={40}
                         className="w-14 h-14 md:w-16 md:h-16"
                     />
 
