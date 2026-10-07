@@ -9,7 +9,7 @@ const SignInPage = () => {
                 <h2 className='text-2xl font-bold text-red-700 text-center mb-5'>সাইন ইন</h2>
                 <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
                    
-                    <label className="label text-gray-700">ইমেইল</label>
+                    <label className="label text-gray-700">ইমেইল</label> 
                     <input type="email" className="input" placeholder="Email" />
 
                     <label className="label text-gray-700">পাসওয়ার্ড</label>
