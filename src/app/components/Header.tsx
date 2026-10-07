@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import UserInfo from './userInfo';
 
 
 const HeaderPage = () => {
@@ -37,16 +38,7 @@ const HeaderPage = () => {
 
                 {/* Buttons */}
         
-                 <div className="flex justify-center md:justify-end gap-2 md:translate-x-10 lg:translate-x-30 sm:translate-0">
-                    <button className="px-4 md:px-3 py-2 rounded-sm font-semibold text-gray-700 text-sm">
-                        সাইন ইন
-                    </button>
-
-                    <button className="bg-red-700 px-4 md:px-3 py-2 rounded-sm text-white font-semibold text-sm">
-                        সাইন আপ
-                    </button>
-                </div>
-
+               <UserInfo />
 
             </div>
 
