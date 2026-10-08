@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 const SignUpPage = () => {
 
-     const router = useRouter();
+    const router = useRouter();
 
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -30,14 +30,25 @@ const SignUpPage = () => {
             toast.error(error.message)
             return;
         }
-
         if (data) {
-            console.log(data);
-            router.push("/");
-            toast.success("SignUp Successful!")
+            console.log(error);
+            toast.success("Sign Up SuccessFul!")
+           
         }
 
     }
+
+    const handleGoogleSignIn = async () => {
+        const {error } = await authClient.signIn.social({
+            provider: "google",
+            callbackURL: "/",
+        });
+
+        if (error) {
+            toast.error(error.message || "Google login failed!");
+        }
+      
+    };
     return (
         <div className='flex justify-center mt-15'>
 
@@ -65,7 +76,17 @@ const SignUpPage = () => {
                 <div className='text-center mt-2'>
                     <p> অ্যাকাউন্ট আছে?{" "} <Link href="/sign-in" className="text-red-600 hover:underline "> সাইন ইন করুন </Link> </p>
                 </div>
+
+                <button
+                    type="button"
+                    onClick={handleGoogleSignIn}
+                    className="w-full rounded-lg px-3 border  py-2 text-sm mt-2"
+                >
+                    Sign Up with Google
+                </button>
             </form>
+
+
         </div>
     );
 };
