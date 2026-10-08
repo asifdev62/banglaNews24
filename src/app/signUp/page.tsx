@@ -2,9 +2,11 @@
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 const SignUpPage = () => {
-    const router = useRouter();
+
+     const router = useRouter();
 
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -25,12 +27,14 @@ const SignUpPage = () => {
 
         if (error) {
             console.log(error);
+            toast.error(error.message)
             return;
         }
 
         if (data) {
             console.log(data);
             router.push("/");
+            toast.success("SignUp Successful!")
         }
 
     }
