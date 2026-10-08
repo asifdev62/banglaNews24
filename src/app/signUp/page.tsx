@@ -3,6 +3,8 @@ import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 const SignUpPage = () => {
 
@@ -31,16 +33,16 @@ const SignUpPage = () => {
             return;
         }
         if (data) {
-            console.log(error);
+            console.log(data);
             toast.success("Sign Up SuccessFul!")
             router.push('/')
-           
+
         }
 
     }
 
     const handleGoogleSignIn = async () => {
-        const {error } = await authClient.signIn.social({
+        const { error } = await authClient.signIn.social({
             provider: "google",
             callbackURL: "/",
         });
@@ -48,7 +50,19 @@ const SignUpPage = () => {
         if (error) {
             toast.error(error.message || "Google login failed!");
         }
-      
+
+    };
+
+    const handleGithubSignIn = async () => {
+        const { error } = await authClient.signIn.social({
+            provider: "github",
+            callbackURL: "/",
+        });
+
+        if (error) {
+            toast.error(error.message || "Github login failed!");
+        }
+
     };
     return (
         <div className='flex justify-center mt-15'>
@@ -78,16 +92,26 @@ const SignUpPage = () => {
                     <p> অ্যাকাউন্ট আছে?{" "} <Link href="/sign-in" className="text-red-600 hover:underline "> সাইন ইন করুন </Link> </p>
                 </div>
 
-                <button
-                    type="button"
-                    onClick={handleGoogleSignIn}
-                    className="w-full rounded-lg px-3 border  py-2 text-sm mt-2"
-                >
-                    Sign Up with Google
-                </button>
+                <div className="flex flex-col gap-2 mt-4 w-full">
+                    <button
+                        type="button"
+                        onClick={handleGoogleSignIn}
+                        className="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-50 hover:shadow-sm"
+                    >
+                        <FcGoogle className="text-lg" />
+                        Google দিয়ে সাইন আপ করুন
+                    </button>
+
+                    <button
+                        type="button"
+                        onClick={handleGithubSignIn}
+                        className="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 bg-gray-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-800 hover:shadow-sm"
+                    >
+                        <FaGithub className="text-lg" />
+                        GitHub দিয়ে সাইন আপ করুন
+                    </button>
+                </div>
             </form>
-
-
         </div>
     );
 };
