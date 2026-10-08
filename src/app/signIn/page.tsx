@@ -24,7 +24,7 @@ const SignInPage = () => {
 
     if (error) {
       console.log(error);
-      toast.error(error.message);
+      toast.error(error.message)
       return;
     }
 
