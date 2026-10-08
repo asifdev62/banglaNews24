@@ -315,6 +315,7 @@ const NewsDetailPage = async ({
         );
     }
 
+
     const description =
         news.description?.blocks?.[0]?.model?.blocks?.[0]?.model?.text;
 
