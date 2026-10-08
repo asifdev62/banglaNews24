@@ -1,36 +1,230 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📰 Bangla News 24
 
-## Getting Started
+A modern Bangla news platform built with **Next.js, TypeScript, Tailwind CSS, MongoDB, and Better Auth**.
 
-First, run the development server:
+Bangla News 24 provides users with a clean and responsive interface to browse Bangla news, explore news categories, read individual articles, and manage their accounts.
+
+## 🚀 Live Website
+
+🔗 **Live Demo:** `(https://bangla-news24-kappa.vercel.app/)`
+
+## 📌 Features
+
+* 📰 Browse latest Bangla news
+* 🔥 Most-read / popular news section
+* 📂 Browse news by category
+* 📖 Individual news details page
+* 🔐 User authentication with Better Auth
+* 👤 User profile
+* ✏️ Profile information management
+* 🔑 Sign In / Sign Up
+* 🔒 Protected user routes
+* 📱 Fully responsive design
+* ⚡ Fast page loading with Next.js
+* 🗄️ MongoDB database integration
+* 🎨 Responsive UI with Tailwind CSS
+* 🔔 Toast notifications
+* 🌐 BBC Bangla news data integration
+
+## 🛠️ Technologies Used
+
+| Technology         | Purpose               |
+| ------------------ | --------------------- |
+| Next.js            | React framework       |
+| TypeScript         | Type-safe development |
+| Tailwind CSS       | Styling               |
+| MongoDB            | Database              |
+| Better Auth        | Authentication        |
+| Next.js App Router | Routing               |
+| React              | UI development        |
+| Vercel             | Deployment            |
+
+## 📁 Project Structure
+
+```text
+bangla-news-24/
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── auth/
+│   │   ├── categoryes/
+│   │   ├── components/
+│   │   ├── news/
+│   │   ├── profile/
+│   │   ├── signIn/
+│   │   ├── signUp/
+│   │   └── page.tsx
+│   │
+│   └── lib/
+│       └── auth.tsx
+│
+├── .env.local
+├── next.config.ts
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/asifdev62/bangla-news-24.git
+```
+
+### 2. Go to the project directory
+
+```bash
+cd bangla-news-24
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Setup Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+MONGODB_URL=your_mongodb_connection_string
+BETTER_AUTH_SECRET=your_better_auth_secret
+BETTER_AUTH_URL=http://localhost:3000
+```
+
+> Never commit `.env.local` or expose your database credentials and authentication secrets.
+
+### 5. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗️ Build for Production
 
-## Learn More
+To create a production build:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To start the production server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm start
+```
 
-## Deploy on Vercel
+## 🔐 Authentication
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Authentication is implemented using **Better Auth**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application supports:
+
+* User registration
+* User login
+* User logout
+* Session management
+* Protected routes
+* User profile
+* Google authentication (if configured)
+
+## 🗄️ Database
+
+The project uses **MongoDB** for storing authentication and user-related data.
+
+Database:
+
+```text
+bangla_news_24
+```
+
+Make sure your MongoDB Atlas network access and database user are correctly configured before running the application.
+
+## 📱 Responsive Design
+
+Bangla News 24 is designed to work across:
+
+* 📱 Mobile
+* 📲 Tablet
+* 💻 Laptop
+* 🖥️ Desktop
+
+## 🚀 Deployment
+
+The application can be deployed easily using **Vercel**.
+
+Build command:
+
+```bash
+npm run build
+```
+
+Before deploying, make sure the required environment variables are configured in your Vercel project.
+
+## 🔒 Environment Variables
+
+Do **not** upload sensitive values to GitHub.
+
+Example:
+
+```env
+MONGODB_URL=
+BETTER_AUTH_SECRET=
+BETTER_AUTH_URL=
+```
+
+Add the actual values through your local `.env.local` file and Vercel Environment Variables.
+
+## 🎯 Future Improvements
+
+Some planned improvements:
+
+* 🔎 News search
+* ❤️ Bookmark / save news
+* 💬 Comments
+* 🔔 Breaking news notifications
+* 🌙 Dark mode
+* 🧑‍💻 Admin dashboard
+* 📰 More news sources
+* 📊 News analytics
+* 🌍 English news section
+
+## 👨‍💻 Developer
+
+**Md Asif Ali**
+
+Full-Stack Web Developer
+BSc in Computer Science & Engineering
+
+### Skills
+
+```text
+JavaScript
+TypeScript
+React
+Next.js
+Tailwind CSS
+MongoDB
+Better Auth
+Git & GitHub
+```
+
+## 📄 License
+
+This project is created for educational and portfolio purposes.
+
+---
+
+⭐ If you like this project, consider giving the repository a star!
+
+
