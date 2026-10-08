@@ -1,5 +1,7 @@
 
 
+
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,8 +18,9 @@ interface MainNewsProps {
 }
 
 const MainNews = ({ news = [] }: MainNewsProps) => {
-
     const [firstNews, ...othersNews] = news;
+    console.log("FIRST NEWS ID:", firstNews?.id);
+console.log("FIRST NEWS OBJECT:", firstNews);
 
     if (!firstNews) {
         return <p>No news available</p>;
@@ -31,7 +34,7 @@ const MainNews = ({ news = [] }: MainNewsProps) => {
                 href={`/news/${firstNews.id}`}
                 className="w-full md:flex-1"
             >
-                <div className="card bg-base-100 shadow-sm h-full hover:shadow-md transition">
+                <div className="card bg-base-100 shadow-sm h-full hover:shadow-md transition cursor-pointer">
 
                     <figure>
                         <Image
@@ -63,7 +66,6 @@ const MainNews = ({ news = [] }: MainNewsProps) => {
                     </div>
                 </div>
             </Link>
-
 
             {/* Other News */}
             <div className="card bg-base-100 w-full md:w-80 lg:w-96 shadow-sm">
