@@ -69,14 +69,14 @@ const UserProfilePage = () => {
 
             <div className="w-full max-w-md sm:max-w-lg bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
 
-                {/* Header */}
+            
                 <div className="bg-red-700 text-white px-4 sm:px-6 py-6 sm:py-8 text-center">
 
                     <h1 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6">
                         Profile
                     </h1>
 
-                    {/* Profile Image */}
+                  
                     <div className="flex justify-center">
                         <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full ring-4 ring-white overflow-hidden">
                             <Image
